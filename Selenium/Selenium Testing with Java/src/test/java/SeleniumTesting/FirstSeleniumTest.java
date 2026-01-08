@@ -1,9 +1,11 @@
 package SeleniumTesting;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -15,7 +17,10 @@ public class FirstSeleniumTest {
 
     @BeforeClass
     public void setup(){
-        driver = new EdgeDriver();
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("https://www.qaplayground.com/bank");
     }
