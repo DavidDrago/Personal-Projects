@@ -1,5 +1,6 @@
-package PageObjectModel;
+package PageObjectModel.qaplayground;
 
+import PageObjectModel.Base.BasePage;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {

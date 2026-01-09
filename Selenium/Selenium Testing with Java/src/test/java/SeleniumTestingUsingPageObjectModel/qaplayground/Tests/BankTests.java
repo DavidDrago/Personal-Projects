@@ -1,7 +1,7 @@
-package SeleniumTestingUsingPageObjectModel.Tests;
+package SeleniumTestingUsingPageObjectModel.qaplayground.Tests;
 
-import PageObjectModel.BankPage;
-import SeleniumTestingUsingPageObjectModel.Base.BaseTest;
+import PageObjectModel.qaplayground.BankPage;
+import SeleniumTestingUsingPageObjectModel.qaplayground.Base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
