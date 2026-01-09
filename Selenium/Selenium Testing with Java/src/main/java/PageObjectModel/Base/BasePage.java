@@ -1,7 +1,8 @@
-package PageObjectModel;
+package PageObjectModel.Base;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import static Utilities.JavaScriptUtilities.clickJS;
 import org.openqa.selenium.WebElement;
 
 public class BasePage {
@@ -21,6 +22,10 @@ public class BasePage {
     }
 
     protected void click(By locator){
-        find(locator).click();
+        try{
+            find(locator).click();
+        } catch (Exception e) {
+            clickJS(locator);
+        }
     }
 }

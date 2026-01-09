@@ -1,8 +1,6 @@
-package SeleniumTestingUsingPageObjectModel.Tests;
+package SeleniumTestingUsingPageObjectModel.qaplayground.Tests;
 
-import PageObjectModel.BasePage;
-import PageObjectModel.LoginPage;
-import SeleniumTestingUsingPageObjectModel.Base.BaseTest;
+import SeleniumTestingUsingPageObjectModel.qaplayground.Base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
