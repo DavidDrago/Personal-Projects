@@ -13,9 +13,9 @@ public class HomePage  extends BasePage {
 
     public FormsPage goToForms(){
         scrollToElement(formsCard);
-        delay(1000);
+        //delay(1000);
         click(formsCard);
-        delay(1000);
+        //delay(1000);
         return new FormsPage();
     }
 }
