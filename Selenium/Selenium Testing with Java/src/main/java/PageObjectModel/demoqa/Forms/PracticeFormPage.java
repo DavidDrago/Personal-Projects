@@ -2,42 +2,61 @@ package PageObjectModel.demoqa.Forms;
 
 import org.openqa.selenium.By;
 
-import static Utilities.JavaScriptUtilities.scrollToElement;
-import static Utilities.Utilities.delay;
+import static Utilities.JavaScriptUtilities.scrollToElementJS;
 
 public class PracticeFormPage extends FormsPage {
     private By femaleRadioButton = By.id("gender-radio-2");
-    private By musicCheckBox = By.id("hobbies-checkbox-3");
-    private By sportsCheckBox = By.id("hobbies-checkbox-1");
+    private By sportsHobbyCheckBox = By.id("hobbies-checkbox-1");
+    private By readingHobbyCheckBox = By.id("hobbies-checkbox-2");
+    private By musicHobbyCheckBox = By.id("hobbies-checkbox-3");
 
-    public void enableMusicCheckBox(){
-        scrollToElement(musicCheckBox);
-        click(musicCheckBox);
-        //delay(1000);
+
+    public void enableMusicHobbyCheckBox(){
+        if(!find(musicHobbyCheckBox).isSelected()){
+            scrollToElementJS(musicHobbyCheckBox);
+            click(musicHobbyCheckBox);
+        }
     }
 
-    public void enableSportsCheckBox(){
-        scrollToElement(sportsCheckBox);
-        click(sportsCheckBox);
-        //delay(1000);
+    public void enableSportsHobbyCheckBox(){
+        if(!find(sportsHobbyCheckBox).isSelected()){
+            scrollToElementJS(sportsHobbyCheckBox);
+            click(sportsHobbyCheckBox);
+        }
+    }
+
+    public void enableReadingHobbyCheckBox(){
+        if(!find(readingHobbyCheckBox).isSelected()){
+            scrollToElementJS(readingHobbyCheckBox);
+            click(readingHobbyCheckBox);
+        }
+    }
+
+    public void disableReadingHobbyCheckBox(){
+        if(find(readingHobbyCheckBox).isSelected()){
+            scrollToElementJS(readingHobbyCheckBox);
+            click(readingHobbyCheckBox);
+        }
     }
 
     public void clickFemaleRadioButton(){
-        scrollToElement(femaleRadioButton);
-        //delay(1000);
+        scrollToElementJS(femaleRadioButton);
         click(femaleRadioButton);
-        //delay(1000);
     }
 
     public boolean isFemaleSelected(){
         return find(femaleRadioButton).isSelected();
     }
 
-    public  boolean isMusicEnabled(){
-        return find(musicCheckBox).isSelected();
+    public  boolean isMusicHobbySelected(){
+        return find(musicHobbyCheckBox).isSelected();
     }
 
-    public  boolean isSportsEnabled(){
-        return find(sportsCheckBox).isSelected();
+    public  boolean isSportsHobbySelected(){
+        return find(sportsHobbyCheckBox).isSelected();
+    }
+
+    public  boolean isReadingHobbySelected(){
+        return find(readingHobbyCheckBox).isSelected();
     }
 }

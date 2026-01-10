@@ -4,6 +4,8 @@ import SeleniumTestingUsingPageObjectModel.demoqa.Base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static Utilities.Utilities.delay;
+
 public class FormsTests extends BaseTest {
     @Test
     public void testScrollingToElement(){
@@ -20,9 +22,12 @@ public class FormsTests extends BaseTest {
     @Test
     public void testCheckBox(){
         var practiceForm = homePage.goToForms().clickPracticeForm();
-        practiceForm.enableMusicCheckBox();
-        Assert.assertTrue(practiceForm.isMusicEnabled(), "Music CheckBox is not enabled");
-        practiceForm.enableSportsCheckBox();
-        Assert.assertTrue(practiceForm.isSportsEnabled(), "Sports CheckBox is not enabled");
+        practiceForm.enableSportsHobbyCheckBox();
+        practiceForm.enableReadingHobbyCheckBox();
+        practiceForm.enableMusicHobbyCheckBox();
+        practiceForm.disableReadingHobbyCheckBox();
+        Assert.assertTrue(practiceForm.isSportsHobbySelected(), "Sports CheckBox is not enabled");
+        Assert.assertTrue(practiceForm.isMusicHobbySelected(), "Music CheckBox is not enabled");
+        Assert.assertFalse(practiceForm.isReadingHobbySelected(), "Reading CheckBox is enabled, it should be disabled");
     }
 }

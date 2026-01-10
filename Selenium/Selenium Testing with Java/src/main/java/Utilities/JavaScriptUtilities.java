@@ -5,7 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 public class JavaScriptUtilities extends Utilities{
-    public static void scrollToElement(By locator){
+    public static void scrollToElementJS(By locator){
         WebElement webElement = driver.findElement(locator);
         String jsScript = "arguments[0].scrollIntoView();";
         ((JavascriptExecutor)driver).executeScript(jsScript, webElement);
