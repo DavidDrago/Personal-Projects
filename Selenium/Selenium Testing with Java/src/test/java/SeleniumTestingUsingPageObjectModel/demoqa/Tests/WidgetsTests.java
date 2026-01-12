@@ -24,4 +24,19 @@ public class WidgetsTests extends BaseTest {
         Assert.assertTrue(selectedOptions.contains("Volvo") && selectedOptions.contains("Audi"));
         Assert.assertTrue(selectedOptions.contains("Saab") && !selectedOptions.contains("Opel"));
     }
+
+    @Test
+    public void testSelectDateInDatePicker(){
+        var datePickerPage = homePage.goToWidgets().clickDatePicker();
+        datePickerPage.clickSelectDate();
+        delay(1000);
+        datePickerPage.selectMonth("March");
+        delay(1000);
+        datePickerPage.selectYear("2000");
+        delay(1000);
+        datePickerPage.selectDay("9");
+        delay(1000);
+
+        Assert.assertEquals(datePickerPage.getDate(), "03/09/2000", "The actual & expected date doesn't match");
+    }
 }
