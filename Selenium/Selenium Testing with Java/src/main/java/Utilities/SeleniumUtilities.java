@@ -1,6 +1,8 @@
 package Utilities;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -31,5 +33,9 @@ public class SeleniumUtilities extends Utilities{
     public static List<String> getAllSelectedOptions(By locator){
         List<WebElement> allSelectedOptions = findDropDown(locator).getAllSelectedOptions();
         return allSelectedOptions.stream().map(WebElement::getText).collect(Collectors.toList());
+    }
+
+    public static Alert switchToAlert(){
+        return driver.switchTo().alert();
     }
 }

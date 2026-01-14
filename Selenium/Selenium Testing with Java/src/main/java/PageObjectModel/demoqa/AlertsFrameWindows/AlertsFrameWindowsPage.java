@@ -1,0 +1,23 @@
+package PageObjectModel.demoqa.AlertsFrameWindows;
+
+import PageObjectModel.demoqa.HomePage;
+import org.openqa.selenium.By;
+
+import static Utilities.JavaScriptUtilities.scrollToElementJS;
+
+public class AlertsFrameWindowsPage extends HomePage {
+    private By modalDialogs = By.xpath("//li[@id='item-4']/span[text()='Modal Dialogs']");
+    private By alerts = By.xpath("//li[@id='item-1']/span[text()='Alerts']");
+
+    public ModalDialogsPage clickModalDialogs(){
+        scrollToElementJS(modalDialogs);
+        click(modalDialogs);
+        return new ModalDialogsPage();
+    }
+
+    public AlertsPage clickAlertsPage(){
+        scrollToElementJS(alerts);
+        click(alerts);
+        return new AlertsPage();
+    }
+}
