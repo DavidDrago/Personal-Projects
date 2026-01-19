@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.awt.*;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class SeleniumUtilities extends Utilities{
@@ -58,5 +59,21 @@ public class SeleniumUtilities extends Utilities{
 
     public static void switchToDefaultContent(){
         driver.switchTo().defaultContent();
+    }
+
+    public static String getWindowHandle(){
+        return driver.getWindowHandle();
+    }
+
+    public static Set<String> getWindowHandles(){
+        return driver.getWindowHandles();
+    }
+
+    public static void switchToWindow(String window){
+        driver.switchTo().window(window);
+    }
+
+    public static void closeWindow(String tab){
+        driver.switchTo().window(tab).close();
     }
 }

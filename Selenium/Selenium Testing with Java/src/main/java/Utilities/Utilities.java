@@ -17,4 +17,8 @@ public class Utilities {
             e.printStackTrace();
         }
     }
+
+    public static void println(String text){
+        System.out.println(text);
+    }
 }

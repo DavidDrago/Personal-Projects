@@ -4,6 +4,8 @@ import SeleniumTestingUsingPageObjectModel.demoqa.Base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Set;
+
 import static Utilities.SeleniumUtilities.*;
 
 public class AlertsFrameWindowsTests extends BaseTest {
@@ -56,5 +58,22 @@ public class AlertsFrameWindowsTests extends BaseTest {
         Assert.assertEquals(framesPage.getSimpleHeading(), "This is a sample page");
         switchToDefaultContent();
         Assert.assertEquals(framesPage.getFramesHeader(), "Frames");
+    }
+
+    @Test
+    public void testWindows(){
+        var windowsPage = homePage.goToAlertsFrameWindows().clickWindowsPage();
+        windowsPage.clickOnNewWindow();
+        windowsPage.switchToNewTabOrWindow();
+        Assert.assertEquals(windowsPage.getSimpleHeading(),"This is a sample page");
+        Assert.assertEquals(windowsPage.getCurrentURL(),"https://demoqa.com/sample");
+        windowsPage.closeCurrentWindow();
+        Assert.assertEquals(windowsPage.getWindowsHeader(), "Browser Windows");
+        windowsPage.clickOnNewTab();
+        windowsPage.switchToNewTabOrWindow();
+        Assert.assertEquals(windowsPage.getSimpleHeading(),"This is a sample page");
+        Assert.assertEquals(windowsPage.getCurrentURL(),"https://demoqa.com/sample");
+        windowsPage.closeCurrentWindow();
+        Assert.assertEquals(windowsPage.getWindowsHeader(), "Browser Windows");
     }
 }
