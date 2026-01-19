@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.awt.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,5 +38,25 @@ public class SeleniumUtilities extends Utilities{
 
     public static Alert switchToAlert(){
         return driver.switchTo().alert();
+    }
+
+    public static void switchToFrame(int index){
+        driver.switchTo().frame(index);
+    }
+
+    public static void switchToFrame(String nameOrId){
+        driver.switchTo().frame(nameOrId);
+    }
+
+    public static void switchToFrame(WebElement frameElement){
+        driver.switchTo().frame(frameElement);
+    }
+
+    public static void switchToParentFrame(){
+        driver.switchTo().parentFrame();
+    }
+
+    public static void switchToDefaultContent(){
+        driver.switchTo().defaultContent();
     }
 }
