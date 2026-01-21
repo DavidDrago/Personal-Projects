@@ -17,19 +17,19 @@ public class AlertsFrameWindowsPage extends HomePage {
         return new ModalDialogsPage();
     }
 
-    public AlertsPage clickAlertsPage(){
+    public AlertsPage clickAlerts(){
         scrollToElementJS(alerts);
         click(alerts);
         return new AlertsPage();
     }
 
-    public FramesPage clickFramesPage(){
+    public FramesPage clickFrames(){
         scrollToElementJS(frames);
         click(frames);
         return new FramesPage();
     }
 
-    public WindowsPage clickWindowsPage(){
+    public WindowsPage clickWindows(){
         scrollToElementJS(windows);
         click(windows);
         return new WindowsPage();

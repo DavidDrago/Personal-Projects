@@ -18,6 +18,6 @@ public class ModalDialogsPage extends AlertsFrameWindowsPage{
     }
 
     public String getSmallModalTitle(){
-        return find(smallModalTitle).getText();
+        return getText(smallModalTitle);
     }
 }

@@ -28,4 +28,20 @@ public class BasePage {
             clickJS(locator);
         }
     }
+
+    protected String getText(By locator){
+        return find(locator).getText();
+    }
+
+    protected String getAttribute(By locator, String name){
+        return find(locator).getAttribute(name);
+    }
+
+    protected Boolean isDisplayed(By locator){
+        return find(locator).isDisplayed();
+    }
+
+    protected Boolean isSelected(By locator){
+        return find(locator).isSelected();
+    }
 }

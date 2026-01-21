@@ -40,7 +40,7 @@ public class AlertsPage extends AlertsFrameWindowsPage{
     }
 
     public String getConfirmBoxResult(){
-        return find(confirmBoxResult).getText();
+        return getText(confirmBoxResult);
     }
 
     public void sendTextToPromptAlertBox(String text){
@@ -48,6 +48,6 @@ public class AlertsPage extends AlertsFrameWindowsPage{
     }
 
     public String getPromptBoxResult(){
-        return find(promptBoxResult).getText();
+        return getText(promptBoxResult);
     }
 }

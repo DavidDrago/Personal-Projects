@@ -52,21 +52,21 @@ public class WebTablesPage extends ElementsPage {
 
     public String getTableAge(String email){
         By tableAge = By.xpath("//div[text()='"+ email +"']//preceding::div[1]");
-        return find(tableAge).getText();
+        return getText(tableAge);
     }
 
     public boolean isFirstNameDisplayed(String firstName){
         By tableFirstName = By.xpath("//div[text()='"+ firstName +"']");
-        return find(tableFirstName).isDisplayed();
+        return isDisplayed(tableFirstName);
     }
 
     public boolean isLastNameDisplayed(String lastName){
         By tableLastName = By.xpath("//div[text()='"+ lastName +"']");
-        return find(tableLastName).isDisplayed();
+        return isDisplayed(tableLastName);
     }
 
     public boolean isEmailDisplayed(String email){
         By tableEmail = By.xpath("//div[text()='"+ email +"']");
-        return find(tableEmail).isDisplayed();
+        return isDisplayed(tableEmail);
     }
 }

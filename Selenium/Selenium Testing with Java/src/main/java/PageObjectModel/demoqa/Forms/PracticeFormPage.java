@@ -45,18 +45,18 @@ public class PracticeFormPage extends FormsPage {
     }
 
     public boolean isFemaleSelected(){
-        return find(femaleRadioButton).isSelected();
+        return isSelected(femaleRadioButton);
     }
 
     public  boolean isMusicHobbySelected(){
-        return find(musicHobbyCheckBox).isSelected();
+        return isSelected(musicHobbyCheckBox);
     }
 
     public  boolean isSportsHobbySelected(){
-        return find(sportsHobbyCheckBox).isSelected();
+        return isSelected(sportsHobbyCheckBox);
     }
 
     public  boolean isReadingHobbySelected(){
-        return find(readingHobbyCheckBox).isSelected();
+        return isSelected(readingHobbyCheckBox);
     }
 }

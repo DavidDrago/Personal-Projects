@@ -4,6 +4,7 @@ import SeleniumTestingUsingPageObjectModel.demoqa.Base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static Utilities.SeleniumUtilities.tabSwitch;
 import static Utilities.Utilities.delay;
 
 public class ElementsTests extends BaseTest {
@@ -47,5 +48,38 @@ public class ElementsTests extends BaseTest {
         linkPage.clickBadRequestLink();
         String response = linkPage.getResponse();
         Assert.assertTrue(response.contains("400") && response.contains("Bad Request"), "Response doesn't match");
+    }
+
+    @Test
+    public void testVisibleAfterSecondsButton(){
+        var dynamicPropertiesPage = homePage.goToElements().clickDynamicProperties();
+        Assert.assertEquals(dynamicPropertiesPage.getTextOfVisibleAfterButton(),"Visible After 5 Seconds");
+    }
+
+    @Test
+    public void testButtons(){
+        var buttonsPage = homePage.goToElements().clickButtons();
+        buttonsPage.clickDoubleClickButton();
+        Assert.assertTrue(buttonsPage.isDoubleClickMessageDisplayed());
+
+        buttonsPage.clickRightClickButton();
+        Assert.assertTrue(buttonsPage.isRightClickMessageDisplayed());
+
+        buttonsPage.clickDynamicClickButton();
+        Assert.assertTrue(buttonsPage.isDynamicClickMessageDisplayed());
+    }
+
+    @Test
+    public void testTextBox(){
+        var testBoxPage = homePage.goToElements().clickTextBox();
+        testBoxPage.setUserName("David Drago");
+        testBoxPage.setEmail("DavidDrago@castle.com");
+        tabSwitch();
+        testBoxPage.setCurrentAddress("151344th street");
+        testBoxPage.setCurrentAddress("Modstat City");
+        testBoxPage.setCurrentAddress("Teyvat Fantasy Realm");
+        testBoxPage.clickSubmit();
+        delay(1000);
+        Assert.assertEquals(testBoxPage.getEmailOutput(), "Email:DavidDrago@castle.com");
     }
 }

@@ -3,6 +3,7 @@ package SeleniumTestingUsingPageObjectModel.demoqa.Base;
 import PageObjectModel.demoqa.HomePage;
 import PageObjectModel.Base.BasePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.jspecify.annotations.NonNull;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import static Utilities.Utilities.setUtilityDriver;
 
@@ -32,6 +34,9 @@ public class BaseTest {
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
+        // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        // driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        // driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
     }
 
     @BeforeMethod
@@ -44,7 +49,7 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void takeScreenshotOfFailureTest(ITestResult testResult){
+    public void takeScreenshotOfFailureTest(@NonNull ITestResult testResult){
         if (ITestResult.FAILURE == testResult.getStatus()){
             TakesScreenshot screenshot = (TakesScreenshot) driver;
             File source = screenshot.getScreenshotAs(OutputType.FILE);

@@ -40,7 +40,7 @@ public class WindowsPage extends AlertsFrameWindowsPage{
     }
 
     public String getSimpleHeading(){
-        return find(simpleHeading).getText();
+        return getText(simpleHeading);
     }
 
     public String getCurrentURL(){
@@ -48,6 +48,6 @@ public class WindowsPage extends AlertsFrameWindowsPage{
     }
 
     public String getWindowsHeader(){
-        return find(windowsHeader).getText();
+        return getText(windowsHeader);
     }
 }

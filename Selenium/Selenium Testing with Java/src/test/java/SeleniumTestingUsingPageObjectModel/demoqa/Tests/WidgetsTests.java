@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 import static Utilities.Utilities.delay;
+import static java.lang.IO.println;
 
 public class WidgetsTests extends BaseTest {
     @Test
@@ -38,5 +39,25 @@ public class WidgetsTests extends BaseTest {
         delay(1000);
 
         Assert.assertEquals(datePickerPage.getDate(), "03/09/2000", "The actual & expected date doesn't match");
+    }
+
+    @Test
+    public void testProgressBar(){
+        var progressBarPage = homePage.goToWidgets().clickProgressBar();
+        progressBarPage.clickStartButton();
+        Assert.assertEquals(progressBarPage.getProgressValue(), "100%");
+    }
+
+    @Test
+    public void testSlider(){
+        var sliderPage = homePage.goToWidgets().clickSlider();
+        int x = 0;
+        int y = 0;
+        for(int i=1;i<=100;i++){
+            double valueX = -325+(i*6.5); // formula to map xoffset value to slider percentage
+            sliderPage.moveSlider((int)valueX, y);
+            Assert.assertEquals(sliderPage.getSliderValue(), String.valueOf(i));
+            println("SliderValue: "+sliderPage.getSliderValue());
+        }
     }
 }
