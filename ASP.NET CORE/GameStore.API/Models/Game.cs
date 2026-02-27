@@ -1,0 +1,18 @@
+using System;
+
+namespace GameStore.API.Models;
+
+public class Game
+{
+    public int Id { get; set; }
+
+     public required string Name { get; set; } // required
+
+    public Genre? Genre { get; set; } //nullable
+
+    public int GenreId { get; set; }
+
+    public decimal Price { get; set; }
+
+    public DateOnly ReleaseDate { get; set; }
+}

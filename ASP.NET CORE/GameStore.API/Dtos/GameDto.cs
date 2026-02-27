@@ -15,7 +15,7 @@ public record GameDto
 public record CreateGameDto
 (
     [Required][StringLength(50)] string Name,
-    [Required][StringLength(20)] string Genre,
+    [Range(1, 50)] int GenreId,
     [Range(0, 500)] decimal Price,
     DateOnly ReleaseDate
 );
@@ -23,7 +23,18 @@ public record CreateGameDto
 public record UpdateGameDto
 (
     [Required][StringLength(50)] string Name,
-    [Required][StringLength(20)] string Genre,
+    [Range(1, 50)] int GenreId,
     [Range(0, 500)] decimal Price,
     DateOnly ReleaseDate
 );
+
+public record GameDetailsDto
+(
+    int Id,
+    string Name,
+    int GenreId,
+    decimal Price,
+    DateOnly ReleaseDate
+);
+
+public record GenreDto(int Id, string Name);
