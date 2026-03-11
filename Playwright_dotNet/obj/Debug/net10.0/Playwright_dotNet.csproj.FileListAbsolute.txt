@@ -528,3 +528,4 @@ E:\Git-PersonalProjects\Personal-Projects\Playwright_dotNet\obj\Debug\net10.0\re
 E:\Git-PersonalProjects\Personal-Projects\Playwright_dotNet\obj\Debug\net10.0\Playwright_dotNet.pdb
 E:\Git-PersonalProjects\Personal-Projects\Playwright_dotNet\obj\Debug\net10.0\Playwright_dotNet.genruntimeconfig.cache
 E:\Git-PersonalProjects\Personal-Projects\Playwright_dotNet\obj\Debug\net10.0\ref\Playwright_dotNet.dll
+E:\Git-PersonalProjects\Personal-Projects\Playwright_dotNet\bin\Debug\net10.0\FluentAssertions.dll

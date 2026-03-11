@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "E:\\Git-PersonalProjects\\Personal-Projects\\Playwright_dotNet\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6C61DF9-33C5-8CE9-4EF5-D207093E2EBF}|Playwright_dotNet.csproj|e:\\git-personalprojects\\personal-projects\\playwright_dotnet\\playwrighttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6C61DF9-33C5-8CE9-4EF5-D207093E2EBF}|Playwright_dotNet.csproj|solutionrelative:playwrighttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B6C61DF9-33C5-8CE9-4EF5-D207093E2EBF}|Playwright_dotNet.csproj|e:\\git-personalprojects\\personal-projects\\playwright_dotnet\\pages\\bookstoreapplicationpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6C61DF9-33C5-8CE9-4EF5-D207093E2EBF}|Playwright_dotNet.csproj|solutionrelative:pages\\bookstoreapplicationpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B6C61DF9-33C5-8CE9-4EF5-D207093E2EBF}|Playwright_dotNet.csproj|e:\\git-personalprojects\\personal-projects\\playwright_dotnet\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6C61DF9-33C5-8CE9-4EF5-D207093E2EBF}|Playwright_dotNet.csproj|solutionrelative:unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6C61DF9-33C5-8CE9-4EF5-D207093E2EBF}|Playwright_dotNet.csproj|e:\\git-personalprojects\\personal-projects\\playwright_dotnet\\playwrighttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6C61DF9-33C5-8CE9-4EF5-D207093E2EBF}|Playwright_dotNet.csproj|solutionrelative:playwrighttest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,20 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PlaywrightTest.cs",
-              "DocumentMoniker": "E:\\Git-PersonalProjects\\Personal-Projects\\Playwright_dotNet\\PlaywrightTest.cs",
-              "RelativeDocumentMoniker": "PlaywrightTest.cs",
-              "ToolTip": "E:\\Git-PersonalProjects\\Personal-Projects\\Playwright_dotNet\\PlaywrightTest.cs",
-              "RelativeToolTip": "PlaywrightTest.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAxwBgAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T08:25:22.127Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -41,14 +36,36 @@
               "RelativeDocumentMoniker": "UnitTest1.cs",
               "ToolTip": "E:\\Git-PersonalProjects\\Personal-Projects\\Playwright_dotNet\\UnitTest1.cs",
               "RelativeToolTip": "UnitTest1.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAqwDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T07:48:58.167Z",
+              "WhenOpened": "2026-03-05T09:03:26.229Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookStoreApplicationPage.cs",
+              "DocumentMoniker": "E:\\Git-PersonalProjects\\Personal-Projects\\Playwright_dotNet\\Pages\\BookStoreApplicationPage.cs",
+              "RelativeDocumentMoniker": "Pages\\BookStoreApplicationPage.cs",
+              "ToolTip": "E:\\Git-PersonalProjects\\Personal-Projects\\Playwright_dotNet\\Pages\\BookStoreApplicationPage.cs",
+              "RelativeToolTip": "Pages\\BookStoreApplicationPage.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAiwBcAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T11:47:22.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlaywrightTest.cs",
+              "DocumentMoniker": "E:\\Git-PersonalProjects\\Personal-Projects\\Playwright_dotNet\\PlaywrightTest.cs",
+              "RelativeDocumentMoniker": "PlaywrightTest.cs",
+              "ToolTip": "E:\\Git-PersonalProjects\\Personal-Projects\\Playwright_dotNet\\PlaywrightTest.cs",
+              "RelativeToolTip": "PlaywrightTest.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAmwCoAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T08:25:22.127Z",
+              "EditorCaption": ""
             }
           ]
         }

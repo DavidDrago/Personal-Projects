@@ -46,7 +46,51 @@ public class PlaywrightTest : PageTest
         // Assert.That(isexist);
 
         // Take the screenshot of the page
-        await Page.ScreenshotAsync(new PageScreenshotOptions { Path = "demoqa_TextBox.png" });   
+        await Page.ScreenshotAsync(new PageScreenshotOptions { Path = "demoqa_TextBox.png" });
+    }
+
+    [Test]
+    public async Task WaitTest() {
+        await Page.ClickAsync("text=Elements");
+        await Page.ClickAsync("text=Web Tables");
+        await Page.ClickAsync("#addNewRecordButton");
+        await Page.ScreenshotAsync(new PageScreenshotOptions { Path = "demoqa_WebTables_AddRecord.png" });
+        await Page.ClickAsync(".btn-close");
+        await Page.ScreenshotAsync(new PageScreenshotOptions { Path = "demoqa_WebTables.png" });
+    }
+
+    [Test]
+    public async Task LoginTest() { 
+        await Page.ClickAsync("text=Book Store Application");
+        var bookStoreApplicationPage = new Pages.BookStoreApplicationPage(Page);
+        await bookStoreApplicationPage.GotoLogin();
+        await bookStoreApplicationPage.Login("JohnDoe", "JohnDoe123@");
+        await bookStoreApplicationPage.GotoBookStore();
+        await bookStoreApplicationPage.ClickBook("Git Pocket Guide");
+        var isExist = await bookStoreApplicationPage.IsBookExist("Git Pocket Guide");
+        Assert.That(isExist);
+        await bookStoreApplicationPage.Logout();
+    }
+
+    [Test]
+    public async Task LoginTestWithRequestAndResponse()
+    {
+        await Page.ClickAsync("text=Book Store Application");
+        var bookStoreApplicationPage = new Pages.BookStoreApplicationPage(Page);
+        await bookStoreApplicationPage.GotoLogin();
+        await bookStoreApplicationPage.Login("JohnDoe", "JohnDoe123@");
+
+        // var waitResponse = Page.WaitForResponseAsync("**/Books");
+        // await bookStoreApplicationPage.GotoBookStore();
+        // var getResponse = await waitResponse;
+        // the above can also be written in a single line as below, which is more concise and easier to read.
+        var response = await Page.RunAndWaitForResponseAsync(async () =>
+        {
+            await bookStoreApplicationPage.GotoBookStore();
+        }, x => x.Url.Contains("/BookStore/v1/Books") && x.Status == 200 && x.StatusText == "OK");
+
+        await bookStoreApplicationPage.ClickBook("Git Pocket Guide");
+        await bookStoreApplicationPage.Logout();
     }
 }
 

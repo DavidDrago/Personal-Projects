@@ -45,4 +45,34 @@ public class Tests
         // By default, NUnit's Assert.That() method uses the Is.True constraint to check if the condition is true. To use false constraint, you can use the Is.False constraint.
         Assert.That(isexist);
     }
+
+
+    [Test]
+    public async Task FlipkartNetWorkInterception()
+    {
+        // Create playwright instanse
+        using var playwright = await Playwright.CreateAsync();
+        //Browser - By default all the tests run in headless mode
+        await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false });
+
+        //Page
+        var page = await browser.NewPageAsync();
+
+        //calling of delegate method to log the request method and url for all the requests made by the page
+        page.Request += (_, request) => Console.WriteLine(request.Method + "---" + request.Url);
+        page.Response += (_, response) => Console.WriteLine(response.Status + "---" + response.StatusText);
+
+        await page.RouteAsync("**/*", async route =>
+        {
+           if (route.Request.ResourceType == "image")
+               await route.AbortAsync();
+           else
+               await route.ContinueAsync();
+        });
+
+        await page.GotoAsync("https://www.flipkart.com/", new PageGotoOptions
+        {
+            WaitUntil = WaitUntilState.NetworkIdle
+        });
+    }
 }

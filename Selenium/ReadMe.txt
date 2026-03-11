@@ -12,4 +12,10 @@ Selenium - https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-j
 TestNG - https://mvnrepository.com/artifact/org.testng/testng
 WebDriverManger - https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
 
+Creating Project in IntelliJ: 
+
+
+
 Reference video for Selenium - https://www.freecodecamp.org/news/learn-java-testing-with-selenium/
+
+

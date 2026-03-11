@@ -1,0 +1,26 @@
+{
+  "students": [
+    {
+      "firstname": "Mukurupu",
+      "lastname": "Raju",
+      "subjectid": 1,
+      "id": 1
+    },
+    {
+      "firstname": "David",
+      "lastname": "Drago",
+      "subjectid": 2,
+      "id": 1
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "name": "Automation"
+    },
+    {
+      "id": 2,
+      "text": "Full-Stack"
+    }
+  ]
+}
