@@ -7,9 +7,9 @@ import static Utilities.JavaScriptUtilities.scrollToElementJS;
 import static Utilities.SeleniumUtilities.sendKeys;
 
 public class TextBoxPage extends ElementsPage{
-    private By userNameField = By.id("userName");
-    private By submit = By.id("submit");
-    private By emailOutput = By.id("email");
+    private By userNameField = By.xpath("//input[starts-with(@id, 'userName')]"); // By.id("userName");
+    private By submit = By.xpath("//label[text()='Full Name']/following::button[@id='submit']"); // By.id("submit");
+    private By emailOutput = By.xpath("//p[contains(@id, 'email')]"); // By.id("email");
 
     public void setUserName(String name){
         scrollToElementJS(userNameField);

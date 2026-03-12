@@ -67,14 +67,23 @@ public class APITest {
 
         System.out.println(request.toJSONString());
 
+        Response response =
         given().
+            // header("Content-Type", "application/json").
             contentType(ContentType.JSON).
             accept(ContentType.JSON).
             body(request.toJSONString()).
         when().
             post("/posts").
         then().
-            statusCode(201).log().all();
+            statusCode(201).
+        body("userId", equalTo(10)).
+            and().
+        body("title", equalTo("Api Testing using RestAssured")).
+        //log().all();
+            extract().response();
+
+        System.out.println(response.asPrettyString());
     }
 
     @Test
