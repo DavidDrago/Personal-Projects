@@ -22,6 +22,7 @@ Using Jenkins for CI/CD:
 	After connecting to Jenkins, install "TestNG Results Plugin" and Maven Integration Plugin.
 	Add Java JDK and Maven in tools by specifying the directory installed.
 	After that we can check for their availability by creating a new freestyle project and configuring the Build Steps to check "java -version and mvn -version" using windows batch commands. Check console output for verification.
+	mvn -Dmaven.test.failure.ignore = true clean test
 
 
 
