@@ -28,13 +28,14 @@ public class BaseTest {
     @BeforeClass
     public void setUp(){
         // Support for Brave Browser
-        // WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+        // options.addArguments("--headless");
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-        // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         // driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         // driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
     }

@@ -18,7 +18,7 @@ public class BaseTest {
     @BeforeClass
     public void setUp(){
         // Support for Brave Browser
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup(); // if the installed browser version is different from installed chrome driver, This method fixes it  by automatically installing the correct chrome driver,
         ChromeOptions options = new ChromeOptions();
         options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
 

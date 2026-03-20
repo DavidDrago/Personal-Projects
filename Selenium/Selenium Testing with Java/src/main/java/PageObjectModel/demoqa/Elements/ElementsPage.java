@@ -40,9 +40,9 @@ public class ElementsPage extends HomePage {
     }
 
     public TextBoxPage clickTextBox(){
-        delay(1000);
+        // delay(1000);
         scrollToElementJS(textBox);
-        delay(1000);
+        // delay(1000);
         click(textBox);
 
         return new TextBoxPage();

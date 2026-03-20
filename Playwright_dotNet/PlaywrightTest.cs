@@ -1,13 +1,15 @@
 ﻿using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Playwright_dotNet;
 
+[TestFixture]
 public class PlaywrightTest : PageTest
 {
     [SetUp]
@@ -91,6 +93,45 @@ public class PlaywrightTest : PageTest
 
         await bookStoreApplicationPage.ClickBook("Git Pocket Guide");
         await bookStoreApplicationPage.Logout();
+    }
+
+    [Test]
+    public async Task LinksTest()
+    {
+        //Browser - By default all the tests run in headless mode
+        await using var browser = await Playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false });
+
+        //Page
+        var page = await browser.NewPageAsync();
+
+        await page.GotoAsync("https://demoqa.com/");
+
+        await page.ClickAsync("text=Elements");
+        await page.ClickAsync("text=Links");
+
+        // Wait for new tab while clicking
+        var newPageTask = page.Context.WaitForPageAsync();
+        
+        await page.ClickAsync("#simpleLink");
+
+        var newPage = await newPageTask;
+
+        // Wait until the new tab loads
+        await newPage.WaitForLoadStateAsync();
+
+        // Perform actions in the new tab
+        await newPage.GetByAltText("Selenium Online Training").ClickAsync();
+        
+
+        var pages = page.Context.Pages;
+
+        var firstTab = pages[0];
+        var secondTab = pages[1];
+
+        await secondTab.BringToFrontAsync();
+        await firstTab.BringToFrontAsync();
+
+        await page.BringToFrontAsync();
     }
 }
 

@@ -39,7 +39,7 @@ public class APITest {
 
         //BDD style
         given().
-            get("/posts").
+                get("/posts").
         then().
             statusCode(200);
 
@@ -77,13 +77,14 @@ public class APITest {
             post("/posts").
         then().
             statusCode(201).
-        body("userId", equalTo(10)).
-            and().
-        body("title", equalTo("Api Testing using RestAssured")).
+            body("userId", equalTo(10)).
+        and().
+            body("title", equalTo("Api Testing using RestAssured")).
         //log().all();
             extract().response();
 
         System.out.println(response.asPrettyString());
+        System.out.println(response.jsonPath().getString("id"));
     }
 
     @Test
